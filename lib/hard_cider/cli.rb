@@ -30,7 +30,10 @@ module HardCider
              required: true
 
       c.action do |_global_options, options, _args|
-        HardCider.wait(Utils.underscore_keys(options))
+        defaults = { before_wait: -> { print '.' } }
+        HardCider.wait(Utils.underscore_keys(options).merge(defaults))
+
+        print "\n"
       end
     end
   end

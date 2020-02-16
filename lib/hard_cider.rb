@@ -12,6 +12,19 @@ module HardCider
       options.slice(*CLIENT_OPTIONS)
     )
 
-    puts client.latest_build(nil)
+    i = 0
+    loop do
+      i += 1
+
+      client.latest_build(nil)
+      options[:before_wait]&.call
+      sleep(5)
+
+      break if i > 2
+    end
+
+    print "\n"
+
+    true
   end
 end
