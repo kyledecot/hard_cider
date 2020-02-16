@@ -23,7 +23,7 @@ Or install it yourself as:
 
 ```
 hard_cider wait \
-  --bundle-identifer="com.kyledecot.Example" \
+  --bundle-id="com.kyledecot.Example" \
   --key-id="KEY_ID" \
   --private-key="$(cat PRIVATE_KEY)" \
   --issuer-id="ISSUER_ID"

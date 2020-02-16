@@ -22,10 +22,10 @@ RSpec.configure do |config|
     stub_request(:any, /api.appstoreconnect.apple.com/).to_return(body: '{ "data": [{}] }') # TODO
 
     AppStoreConnect.config = {
-      key_id: "KEY_ID",
-      private_key: File.read(File.expand_path("spec/support/fixtures/private_key.pem")),
+      key_id: 'KEY_ID',
+      private_key: File.read(File.expand_path('spec/support/fixtures/private_key.pem')),
 
-      issuer_id: "ISSUER_ID"
+      issuer_id: 'ISSUER_ID'
     }
   end
 
