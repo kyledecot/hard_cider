@@ -20,6 +20,12 @@ RSpec.configure do |config|
   config.before(:each) do
     stub_request(:post, 'https://api.mixpanel.com/track')
     stub_request(:any, /api.appstoreconnect.apple.com/).to_return(body: '{ "data": [{}] }') # TODO
+
+    AppStoreConnect.config = {
+      key_id: "KEY_ID",
+      private_key: "PRIVATE_KEY",
+      issuer_id: "ISSUER_ID"
+    }
   end
 
   config.expect_with :rspec do |c|
