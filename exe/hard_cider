@@ -1,0 +1,6 @@
+#! /usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'hard_cider/cli'
+
+HardCider::CLI.run(ARGV)

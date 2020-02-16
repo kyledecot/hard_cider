@@ -7,7 +7,6 @@ RSpec.describe HardCider::Client do
   describe '#latest_build' do
     it 'returns a hash' do
       actual = client.latest_build
-      binding.pry
       expect(actual).to match_array([])
     end
   end
