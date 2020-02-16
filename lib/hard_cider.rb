@@ -18,15 +18,12 @@ module HardCider
     timeout_at = Time.now + options[:timeout]
 
     loop do
-      now = Time.now
-
-      client.latest_build(bundle_id)
       options[:before_wait]&.call
+
+      return true if client.latest_build_processed?(bundle_id)
+      return false if Time.now > timeout_at
+
       sleep(options[:frequency])
-
-      return false if now > timeout_at
     end
-
-    true
   end
 end
