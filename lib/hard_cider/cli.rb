@@ -14,19 +14,8 @@ module HardCider
       c.flag %i[b bundle-id]
 
       c.action do |_global_options, options, _args|
-        client = HardCider::Client.new(client_options(options))
-
-        puts client.latest_build(nil)
+        HardCider.wait(Utils.underscore_keys(options))
       end
     end
-
-    private
-
-    def self.client_options(options)
-      options.slice(:key - id, :issuer - id, :private - key).map do |key, value|
-        [key.to_s.gsub('-', '_').to_sym, value]
-      end.to_h
-    end
-    private_class_method :client_options
   end
 end

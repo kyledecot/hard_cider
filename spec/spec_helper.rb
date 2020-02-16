@@ -2,6 +2,7 @@
 
 require 'bundler/setup'
 require 'hard_cider'
+require 'hard_cider/cli'
 require 'pry'
 require 'simplecov'
 require 'webmock/rspec'
