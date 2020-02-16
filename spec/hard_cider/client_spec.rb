@@ -5,9 +5,9 @@ RSpec.describe HardCider::Client do
   let(:bundle_id) { 'com.kyledecot.Example' }
 
   describe '#latest_build' do
-    xit 'returns a hash' do
-      actual = client.latest_build
-      expect(actual).to match_array([])
+    it 'returns a hash' do
+      actual = client.latest_build(nil)
+      expect(actual).to be_a(Hash)
     end
   end
 end
