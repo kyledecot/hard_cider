@@ -17,15 +17,19 @@ module HardCider
       @app_id[bundle_id]
     end
 
-    def latest_build_processed?(bundle_id)
-      response = @client.builds(
+    def latest_build(bundle_id)
+      @client.builds(
         limit: 1,
         filter: {
           app: app_id(bundle_id)
         }
-      )
+      ).dig(:data, 0)
+    end
 
-      response.dig(:data, 0, :attributes, :processing_state) == 'VALID'
+    def latest_build_processed?(bundle_id)
+      processing_state = latest_build(bundle_id).dig(:data, 0, :attributes, :processing_state)
+
+      processing_state == 'VALID'
     end
 
     private

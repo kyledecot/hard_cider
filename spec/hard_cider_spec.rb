@@ -3,7 +3,7 @@
 RSpec.describe HardCider do
   describe '.wait' do
     it 'returns true' do
-      actual = described_class.wait(bundle_id: nil, interval: 0)
+      actual = described_class.wait(bundle_id: nil, interval: 0, timeout: 1)
 
       expect(actual).to eq(true)
     end

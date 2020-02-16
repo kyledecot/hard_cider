@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     hard_cider (0.1.0)
-      app_store_connect
+      app_store_connect (= 0.19.0)
       gli
 
 GEM

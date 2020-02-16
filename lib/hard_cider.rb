@@ -26,4 +26,12 @@ module HardCider
       sleep(options[:frequency])
     end
   end
+
+  def self.state(bundle_id:, **options)
+    client = HardCider::Client.new(
+      options.slice(*CLIENT_OPTIONS)
+    )
+
+    client.latest_build(bundle_id).dig(:attributes, :processing_state)
+  end
 end

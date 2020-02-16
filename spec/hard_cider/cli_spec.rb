@@ -11,13 +11,19 @@ RSpec.describe HardCider::CLI do
       $stdout = stdout
     end
 
+    context 'when command is `state`' do
+      it 'should delegate' do
+        pending
+      end
+    end
+
     context 'when command is `wait`' do
       it 'should delegate' do
         expect(HardCider)
           .to receive(:wait)
           .and_call_original
 
-        described_class.run(['wait', '--frequency', 0, '--bundle-id', 'com.kyledecot.Example'])
+        described_class.run(['wait', '--frequency', 0, '--timeout', 0, '--bundle-id', 'com.kyledecot.Example'])
       end
     end
   end
