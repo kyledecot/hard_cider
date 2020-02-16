@@ -1,9 +1,7 @@
 # `hard_cider`
 [![Test](https://github.com/kyledecot/hard_cider/workflows/Test/badge.svg)](https://github.com/kyledecot/hard_cider/actions) [![Gem Version](https://badge.fury.io/rb/hard_cider.svg)](https://badge.fury.io/rb/hard_cider) [![Maintainability](https://api.codeclimate.com/v1/badges/cd98966bacaf8587365a/maintainability)](https://codeclimate.com/github/kyledecot/hard_cider/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/cd98966bacaf8587365a/test_coverage)](https://codeclimate.com/github/kyledecot/hard_cider/test_coverage)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hard_cider`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Wait for your Apple .ipa files to be processed
 
 ## Installation
 
@@ -23,7 +21,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+hard_cider wait \
+  --bundle-identifer="com.kyledecot.Example" \
+  --key-id="KEY_ID" \
+  --private-key="$(cat PRIVATE_KEY)" \
+  --issuer-id="ISSUER_ID"
+```
 
 ## Development
 
@@ -33,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hard_cider.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kyledecot/hard_cider.
 
 ## License
 
