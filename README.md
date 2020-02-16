@@ -1,4 +1,5 @@
-# HardCider
+# `hard_cider`
+[![Test](https://github.com/kyledecot/hard_cider/workflows/Test/badge.svg)](https://github.com/kyledecot/hard_cider/actions) [![Gem Version](https://badge.fury.io/rb/hard_cider.svg)](https://badge.fury.io/rb/hard_cider) [![Maintainability](https://api.codeclimate.com/v1/badges/cd98966bacaf8587365a/maintainability)](https://codeclimate.com/github/kyledecot/hard_cider/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/cd98966bacaf8587365a/test_coverage)](https://codeclimate.com/github/kyledecot/hard_cider/test_coverage)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hard_cider`. To experiment with that code, run `bin/console` for an interactive prompt.
 
