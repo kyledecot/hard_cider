@@ -3,4 +3,4 @@
 
 require 'hard_cider/cli'
 
-HardCider::CLI.run(ARGV)
+exit HardCider::CLI.run(ARGV)

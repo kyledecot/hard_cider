@@ -7,6 +7,12 @@ module HardCider
   class CLI
     extend GLI::App
 
+    class IPANotProcessed < GLI::CustomExit
+      def initialize
+        super('IPA Not Processed', 1)
+      end
+    end
+
     program_desc 'Wait for Apple IPAs'
 
     desc 'Wait for Apple IPAs'
@@ -41,9 +47,11 @@ module HardCider
 
       c.action do |_global_options, options, _args|
         defaults = { before_wait: -> { print '.' } }
-        HardCider.wait(Utils.underscore_keys(options).merge(defaults))
+        result = HardCider.wait(Utils.underscore_keys(options).merge(defaults))
 
         print "\n"
+
+        raise IPANotProcessed unless result
       end
     end
   end
