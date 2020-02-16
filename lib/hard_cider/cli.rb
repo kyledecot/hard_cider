@@ -29,6 +29,16 @@ module HardCider
       c.flag %i[b bundle-id],
              required: true
 
+      c.flag %i[f frequency],
+             desc: 'Frequency',
+             type: Integer,
+             default_value: HardCider::DEFAULTS[:frequency]
+
+      c.flag %i[t timeout],
+             desc: 'Timeout',
+             type: Integer,
+             default_value: HardCider::DEFAULTS[:timeout]
+
       c.action do |_global_options, options, _args|
         defaults = { before_wait: -> { print '.' } }
         HardCider.wait(Utils.underscore_keys(options).merge(defaults))
