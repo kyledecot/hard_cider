@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'hard_cider'
 require 'pry'
 require 'simplecov'
+require 'webmock/rspec'
 
 SimpleCov.start do
   add_filter('/spec/')
@@ -15,6 +16,11 @@ RSpec.configure do |config|
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
+
+  config.before(:each) do
+    stub_request(:post, 'https://api.mixpanel.com/track')
+    stub_request(:any, /api.appstoreconnect.apple.com/).to_return(body: '{ "data": [{}] }') # TODO
+  end
 
   config.expect_with :rspec do |c|
     c.syntax = :expect

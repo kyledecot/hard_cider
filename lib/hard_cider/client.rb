@@ -9,12 +9,14 @@ module HardCider
     end
 
     def latest_build(_bundle_id)
-      [*@client.builds(
+      response = @client.builds(
         limit: 1
         # filter: {
         # app: bundle_id
         # }
-      )[:data]].first
+      )
+
+      response[:data].first
     end
   end
 end
