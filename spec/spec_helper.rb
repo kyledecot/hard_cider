@@ -23,7 +23,8 @@ RSpec.configure do |config|
 
     AppStoreConnect.config = {
       key_id: "KEY_ID",
-      private_key: "PRIVATE_KEY",
+      private_key: File.read(File.expand_path("spec/support/fixtures/private_key.pem")),
+
       issuer_id: "ISSUER_ID"
     }
   end
