@@ -13,7 +13,7 @@ RSpec.describe HardCider::CLI do
           .to receive(:wait)
           .and_call_original
 
-        described_class.run(['wait', '--frequency', '0', '--timeout', '0', '--bundle-id', 'com.kyledecot.Example'])
+        described_class.run(['wait', '--frequency=0', '--timeout=0', '--bundle-id=com.kyledecot.Example'])
       end
     end
   end
