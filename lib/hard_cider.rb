@@ -10,6 +10,9 @@ module HardCider
 
   DEFAULTS = { frequency: 30, timeout: 3600 }.freeze
 
+  # @param bundle_id [String]
+  # @param options [Hash]
+  # @return [Boolean]
   def self.wait(bundle_id:, **options)
     options = DEFAULTS.merge(options)
     client = HardCider::Client.new(
@@ -27,6 +30,9 @@ module HardCider
     end
   end
 
+  # @param bundle_id [String]
+  # @param options [Hash]
+  # @return [String]
   def self.state(bundle_id:, **options)
     client = HardCider::Client.new(
       options.slice(*CLIENT_OPTIONS)
