@@ -23,13 +23,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 2.0'
-  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'pry', '~> 0.12.2'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop', '~> 0.79.0'
   spec.add_development_dependency 'simplecov', '~> 0.16.1'
   spec.add_development_dependency 'webmock', '~> 3.6.0'
 
   spec.add_runtime_dependency 'app_store_connect', '0.19.0'
-  spec.add_runtime_dependency 'gli'
+  spec.add_runtime_dependency 'gli', '~> 2.19.0'
 end

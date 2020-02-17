@@ -3,7 +3,7 @@ PATH
   specs:
     hard_cider (0.1.0)
       app_store_connect (= 0.19.0)
-      gli
+      gli (~> 2.19.0)
 
 GEM
   remote: https://rubygems.org/
@@ -89,10 +89,10 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.0)
   hard_cider!
-  pry
+  pry (~> 0.12.2)
   rake (~> 10.0)
   rspec (~> 3.0)
-  rubocop
+  rubocop (~> 0.79.0)
   simplecov (~> 0.16.1)
   webmock (~> 3.6.0)
 
