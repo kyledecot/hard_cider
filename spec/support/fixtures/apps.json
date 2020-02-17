@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "type": "apps",
+      "id": "123456789",
+      "attributes": {
+        "name": "Example",
+        "bundle_id": "com.kyledecot.Example",
+        "sku": "Example",
+        "primary_locale": "en-US"
+      },
+      "relationships": {
+        "beta_testers": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789/relationships/betaTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/123456789/betaTesters"
+          }
+        },
+        "beta_groups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789/relationships/betaGroups",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/123456789/betaGroups"
+          }
+        },
+        "pre_release_versions": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789/relationships/preReleaseVersions",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/123456789/preReleaseVersions"
+          }
+        },
+        "beta_app_localizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789/relationships/betaAppLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/123456789/betaAppLocalizations"
+          }
+        },
+        "builds": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789/relationships/builds",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/123456789/builds"
+          }
+        },
+        "beta_license_agreement": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789/relationships/betaLicenseAgreement",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/123456789/betaLicenseAgreement"
+          }
+        },
+        "beta_app_review_detail": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789/relationships/betaAppReviewDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/123456789/betaAppReviewDetail"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/apps/123456789"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/apps?filter%5BbundleId%5D=com.kyledecot.Example"
+  },
+  "meta": {
+    "paging": {
+      "total": 1,
+      "limit": 50
+    }
+  }
+}

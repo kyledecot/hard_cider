@@ -7,6 +7,8 @@ require 'pry'
 require 'simplecov'
 require 'webmock/rspec'
 
+require_relative 'support/fixture_helper'
+
 SimpleCov.start do
   add_filter('/spec/')
 end
@@ -20,7 +22,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     stub_request(:post, 'https://api.mixpanel.com/track')
-    stub_request(:any, /api.appstoreconnect.apple.com/).to_return(body: '{ "data": [{}] }') # TODO
 
     AppStoreConnect.config = {
       key_id: 'KEY_ID',
@@ -29,6 +30,8 @@ RSpec.configure do |config|
       issuer_id: 'ISSUER_ID'
     }
   end
+
+  config.include(FixtureHelper)
 
   config.expect_with :rspec do |c|
     c.syntax = :expect

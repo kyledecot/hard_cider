@@ -12,18 +12,20 @@ module HardCider
     # @param bundle_id [String]
     # @return [Hash]
     def latest_build(bundle_id)
-      @client.builds(
+      response = @client.builds(
         limit: 1,
         filter: {
           app: app_id(bundle_id)
         }
-      ).dig(:data, 0)
+      )
+
+      response.dig(:data, 0)
     end
 
     # @param bundle_id [String]
     # @return [String]
     def latest_build_processed?(bundle_id)
-      processing_state = latest_build(bundle_id).dig(:data, 0, :attributes, :processing_state)
+      processing_state = latest_build(bundle_id).dig(:attributes, :processing_state)
 
       processing_state == 'VALID'
     end
@@ -32,11 +34,13 @@ module HardCider
 
     # @param bundle_id [String]
     def apps(bundle_id)
-      @client.apps(
+      response = @client.apps(
         filter: {
           bundle_id: bundle_id
         }
-      )[:data]
+      )
+
+      response[:data]
     end
 
     # @param bundle_id [String]
