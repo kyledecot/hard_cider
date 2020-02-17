@@ -13,8 +13,4 @@ RSpec.describe HardCider do
       expect(actual).to eq(true)
     end
   end
-
-  describe '.state' do
-    pending
-  end
 end
