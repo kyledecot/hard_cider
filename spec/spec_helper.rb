@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'hard_cider'
-require 'hard_cider/cli'
 require 'pry'
 require 'simplecov'
 require 'webmock/rspec'
@@ -12,6 +10,9 @@ require_relative 'support/fixture_helper'
 SimpleCov.start do
   add_filter('/spec/')
 end
+
+require 'hard_cider'
+require 'hard_cider/cli'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
