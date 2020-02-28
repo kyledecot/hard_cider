@@ -41,11 +41,9 @@ module HardCider
              type: Integer,
              default_value: HardCider::DEFAULTS[:timeout]
       c.action do |_global_options, options, _args|
-        puts HardCider.state(
-          private_key_path: options.fetch(:"private-key-path"),
-          issuer_id: options.fetch(:"issuer-id"),
-          key_id: options.fetch(:"key-id")
-        )
+        options[:private_key_path] = options.delete(:"private-key-path")
+
+        puts HardCider.state(Utils.underscore_keys(options))
       end
     end
 
@@ -82,12 +80,7 @@ module HardCider
 
       c.action do |_global_options, options, _args|
         defaults = { before_wait: -> { print '.' } }
-        result = HardCider.wait(
-          private_key_path: options.fetch(:"private-key-path"),
-          issuer_id: options.fetch(:"issuer-id"),
-          key_id: options.fetch(:"key-id"),
-          bundle_id: options.fetch(:"bundle-id")
-        )
+        result = HardCider.wait(Utils.underscore_keys(defaults.merge(options)))
 
         print "\n"
 

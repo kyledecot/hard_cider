@@ -25,7 +25,7 @@ Or install it yourself as:
 hard-cider wait \
   --bundle-id="com.kyledecot.Example" \
   --key-id=$APP_STORE_CONNECT_KEY_ID \
-  --private-key-path="$(cat PRIVATE_KEY)" \
+  --private-key-path=$APP_STORE_CONNECT_PRIVATE_KEY_PATH \
   --issuer-id=$APP_STORE_CONNECT_ISSUER_ID
 ```
 

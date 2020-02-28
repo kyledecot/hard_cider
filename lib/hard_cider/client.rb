@@ -6,7 +6,7 @@ module HardCider
   class Client
     # @param options [Hash]
     def initialize(options = {})
-      options[:private_key] = File.read(options.delete(:private_key_path)) 
+      options[:private_key] = File.read(options.delete(:private_key_path)) if options.key?(:private_key_path)
 
       @client = AppStoreConnect::Client.new(options)
     end
