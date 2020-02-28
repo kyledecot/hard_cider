@@ -24,10 +24,9 @@ module HardCider
              mask: true,
              default_value: ENV['APP_STORE_CONNECT_KEY_ID']
 
-      c.flag %i[p private-key],
-             desc: 'App Store Connect API Private Key',
-             mask: true,
-             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY']
+      c.flag %i[p private-key-path],
+             desc: 'App Store Connect API Private Key Path',
+             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY_PATH']
 
       c.flag %i[b bundle-id],
              required: true
@@ -42,7 +41,11 @@ module HardCider
              type: Integer,
              default_value: HardCider::DEFAULTS[:timeout]
       c.action do |_global_options, options, _args|
-        puts HardCider.state(Utils.underscore_keys(options))
+        puts HardCider.state(
+          private_key_path: options.fetch(:"private-key-path"),
+          issuer_id: options.fetch(:"issuer-id"),
+          key_id: options.fetch(:"key-id")
+        )
       end
     end
 
@@ -60,10 +63,9 @@ module HardCider
              mask: true,
              default_value: ENV['APP_STORE_CONNECT_KEY_ID']
 
-      c.flag %i[p private-key],
-             desc: 'App Store Connect API Private Key',
-             mask: true,
-             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY']
+      c.flag %i[p private-key-path],
+             desc: 'App Store Connect API Private Key Path',
+             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY_PATH']
 
       c.flag %i[b bundle-id],
              required: true
@@ -80,7 +82,12 @@ module HardCider
 
       c.action do |_global_options, options, _args|
         defaults = { before_wait: -> { print '.' } }
-        result = HardCider.wait(Utils.underscore_keys(options).merge(defaults).reject { |_k, v| v.nil? })
+        result = HardCider.wait(
+          private_key_path: options.fetch(:"private-key-path"),
+          issuer_id: options.fetch(:"issuer-id"),
+          key_id: options.fetch(:"key-id"),
+          bundle_id: options.fetch(:"bundle-id")
+        )
 
         print "\n"
 
