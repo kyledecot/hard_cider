@@ -82,7 +82,7 @@ module HardCider
 
       c.action do |_global_options, options, _args|
         defaults = { before_wait: -> { print '.' } }
-        result = HardCider.wait(Utils.underscore_keys(options.merge(defaults)))
+        result = HardCider.wait(Utils.underscore_keys(options.merge(defaults)).reject { |_k, v| v.nil? })
 
         print "\n"
 
