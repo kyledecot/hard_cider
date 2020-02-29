@@ -5,7 +5,7 @@ require 'hard_cider/client'
 require 'hard_cider/utils'
 
 module HardCider
-  CLIENT_OPTIONS = %i[key_id issuer_id private_key].freeze
+  CLIENT_OPTIONS = %i[key_id issuer_id private_key_path].freeze
   private_constant :CLIENT_OPTIONS
 
   DEFAULTS = { frequency: 30, timeout: 3600 }.freeze

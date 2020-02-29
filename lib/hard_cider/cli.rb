@@ -24,24 +24,26 @@ module HardCider
              mask: true,
              default_value: ENV['APP_STORE_CONNECT_KEY_ID']
 
-      c.flag %i[p private-key],
-             desc: 'App Store Connect API Private Key',
-             mask: true,
-             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY']
+      c.flag %i[p private-key-path],
+             desc: 'App Store Connect API Private Key Path',
+             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY_PATH']
 
       c.flag %i[b bundle-id],
+             desc: 'Bundle Identifier',
              required: true
 
       c.flag %i[f frequency],
-             desc: 'Frequency',
+             desc: 'Frequency in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:frequency]
 
       c.flag %i[t timeout],
-             desc: 'Timeout',
+             desc: 'Timeout in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:timeout]
       c.action do |_global_options, options, _args|
+        options[:private_key_path] = options.delete(:"private-key-path")
+
         puts HardCider.state(Utils.underscore_keys(options))
       end
     end
@@ -60,21 +62,21 @@ module HardCider
              mask: true,
              default_value: ENV['APP_STORE_CONNECT_KEY_ID']
 
-      c.flag %i[p private-key],
-             desc: 'App Store Connect API Private Key',
-             mask: true,
-             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY']
+      c.flag %i[p private-key-path],
+             desc: 'App Store Connect API Private Key Path',
+             default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY_PATH']
 
       c.flag %i[b bundle-id],
+             desc: 'Bundle Identifier',
              required: true
 
       c.flag %i[f frequency],
-             desc: 'Frequency',
+             desc: 'Frequency in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:frequency]
 
       c.flag %i[t timeout],
-             desc: 'Timeout',
+             desc: 'Timeout in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:timeout]
 
