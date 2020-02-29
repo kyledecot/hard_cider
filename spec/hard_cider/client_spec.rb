@@ -11,7 +11,7 @@ RSpec.describe HardCider::Client do
 
   describe '#latest_build' do
     it 'returns a hash' do
-      actual = client.latest_build(nil)
+      actual = client.latest_build(bundle_id)
       expect(actual).to be_a(Hash)
     end
   end

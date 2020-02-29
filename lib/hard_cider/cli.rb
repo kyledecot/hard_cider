@@ -29,15 +29,16 @@ module HardCider
              default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY_PATH']
 
       c.flag %i[b bundle-id],
+             desc: 'Bundle Identifier',
              required: true
 
       c.flag %i[f frequency],
-             desc: 'Frequency',
+             desc: 'Frequency in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:frequency]
 
       c.flag %i[t timeout],
-             desc: 'Timeout',
+             desc: 'Timeout in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:timeout]
       c.action do |_global_options, options, _args|
@@ -66,15 +67,16 @@ module HardCider
              default_value: ENV['APP_STORE_CONNECT_PRIVATE_KEY_PATH']
 
       c.flag %i[b bundle-id],
+             desc: 'Bundle Identifier',
              required: true
 
       c.flag %i[f frequency],
-             desc: 'Frequency',
+             desc: 'Frequency in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:frequency]
 
       c.flag %i[t timeout],
-             desc: 'Timeout',
+             desc: 'Timeout in seconds',
              type: Integer,
              default_value: HardCider::DEFAULTS[:timeout]
 
