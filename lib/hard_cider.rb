@@ -14,11 +14,8 @@ module HardCider
   # @param options [Hash]
   # @return [Boolean]
   def self.wait(bundle_id:, **options)
-    options = DEFAULTS.merge(options)
-    client = HardCider::Client.new(
-      options.slice(*CLIENT_OPTIONS)
-    )
     timeout_at = Time.now + options[:timeout]
+    client = build_client(options)
 
     loop do
       options[:before_wait]&.call
@@ -34,10 +31,15 @@ module HardCider
   # @param options [Hash]
   # @return [String]
   def self.state(bundle_id:, **options)
-    client = HardCider::Client.new(
-      options.slice(*CLIENT_OPTIONS)
-    )
-
-    client.latest_build(bundle_id).dig(:attributes, :processing_state)
+    build_client(options)
+      .latest_build(bundle_id)
+      .dig(:attributes, :processing_state)
   end
+
+  def self.build_client(options)
+    HardCider::Client.new(
+      DEFAULTS.merge(options).slice(*CLIENT_OPTIONS)
+    )
+  end 
+  private_class_method :build_client
 end

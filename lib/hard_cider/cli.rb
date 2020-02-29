@@ -42,8 +42,6 @@ module HardCider
              type: Integer,
              default_value: HardCider::DEFAULTS[:timeout]
       c.action do |_global_options, options, _args|
-        options[:private_key_path] = options.delete(:"private-key-path")
-
         puts HardCider.state(Utils.underscore_keys(options))
       end
     end
