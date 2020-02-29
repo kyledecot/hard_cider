@@ -1,4 +1,4 @@
-# `hard_cider`
+# hard_cider
 [![Test](https://github.com/kyledecot/hard_cider/workflows/Test/badge.svg)](https://github.com/kyledecot/hard_cider/actions) [![Gem Version](https://badge.fury.io/rb/hard_cider.svg)](https://badge.fury.io/rb/hard_cider) [![Maintainability](https://api.codeclimate.com/v1/badges/e13c94f97898e74f34a9/maintainability)](https://codeclimate.com/github/kyledecot/hard_cider/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/e13c94f97898e74f34a9/test_coverage)](https://codeclimate.com/github/kyledecot/hard_cider/test_coverage)
 
 Wait for your Apple .ipa files to be processed
