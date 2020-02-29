@@ -2,8 +2,10 @@
 
 RSpec.describe HardCider do
   before do
-    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/apps}).to_return(body: fixture('apps.json'))
-    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/builds}).to_return(body: fixture('valid.json'))
+    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/apps})
+      .to_return(body: fixture('apps.json'))
+    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/builds})
+      .to_return(body: fixture('builds.json'))
   end
 
   describe '.wait' do
