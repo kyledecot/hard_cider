@@ -40,6 +40,6 @@ module HardCider
     HardCider::Client.new(
       DEFAULTS.merge(options).slice(*CLIENT_OPTIONS)
     )
-  end 
+  end
   private_class_method :build_client
 end
