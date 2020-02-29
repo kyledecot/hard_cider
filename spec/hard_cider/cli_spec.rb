@@ -14,7 +14,7 @@ RSpec.describe HardCider::CLI do
           .and_call_original
 
         described_class
-          .run(['wait', '--frequency=0', '--timeout=0', '--bundle-id=com.kyledecot.Example'])
+          .run(['wait', "--private-key-path=#{private_key_path}", '--frequency=0', '--timeout=0', '--bundle-id=com.kyledecot.Example'])
       end
     end
   end
