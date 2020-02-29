@@ -5,14 +5,16 @@ RSpec.describe HardCider::Client do
   let(:bundle_id) { 'com.kyledecot.Example' }
 
   before do
-    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/apps}).to_return(body: fixture('apps.json'))
-    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/builds}).to_return(body: fixture('valid.json'))
+    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/apps})
+      .to_return(body: fixture('apps.json'))
+    stub_request(:get, %r{api\.appstoreconnect\.apple\.com/v1/builds})
+      .to_return(body: fixture('builds.json'))
   end
 
   describe '#latest_build' do
-    it 'returns a hash' do
-      actual = client.latest_build(bundle_id)
-      expect(actual).to be_a(Hash)
+    it 'should return a hash' do
+      expect(client.latest_build(bundle_id))
+        .to be_a(Hash)
     end
   end
 
