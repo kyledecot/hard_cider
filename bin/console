@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-# frozen_string_literal: true
-
-require 'hard_cider'
-require 'pry'
-
-Pry.start(HardCider)
